@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+    * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        background-color: #C2A077;
+        height: 100vh;
+    }
+
+    .box {
+        width: 300px;
+        height: 300px;
+        border-radius: 100%;
+        border: solid 5px black;
+        background: 
+		radial-gradient(1q,white 110q, black 140q,white),
+		repeating-conic-gradient(from -3.8deg, white 2deg, black 4deg, white 1deg 47deg);
+	    background-blend-mode: lighten;
+	    mix-blend-mode: darken;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box::after, .box::before {
+        position: absolute;
+        font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 600;
+        font-size: 1em;
+    }
+
+    .box::after {
+        content: 'W🏀rld!';
+        transform-origin: 43%;
+        animation: rotateWorld linear infinite 3s;
+    }
+
+    .box::before {
+        content: 'Hello';
+        transform-origin: -50px;
+        animation: rotateHello linear infinite 1.2s;
+    }
+
+
+    @keyframes rotateWorld {
+        from {
+            transform: translate(6px) rotateZ(0deg)
+        }
+
+        to {
+            transform:translate(6px) rotateZ(360deg)
+        }
+    }
+
+    @keyframes rotateHello {
+        from {
+            transform: translate(calc(50% + 50px)) rotateZ(0deg)
+        }
+
+        to {
+            transform: translate(calc(50% + 50px)) rotateZ(360deg)
+        }
+    }
+
+
+</style>
+
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
