@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+    * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        color: whitesmoke;
+        background-color: #181330;
+        height: 100vh;
+        font-family: Roboto;
+        font-weight: 600;
+        font-size: 2em;
+    }
+
+    .box {
+        width: 300px;
+        height: 300px;
+        border-radius: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        perspective: 110q;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    .box::after {
+        content: 'Hello world!';
+        transform-style: preserve-3d;
+        transform: rotateX(30deg);
+        text-shadow: 0 -26q,
+            0 0,
+            0 26q,
+            0 53q,
+            0 79q,
+            0 106q,
+            0 132q;
+
+        animation: trip alternate-reverse infinite 2s;
+    }
+
+    
+    @keyframes trip {
+        from {
+            transform: rotateX(30deg);
+            width: 600px;
+            height: 15px;
+            font-size: 1em;
+        }
+        to {
+            transform: rotateX(30deg);
+            height: 300px;
+            width: 400px;
+            font-size: 14px;
+        }
+    }
+
+
+</style>
+
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
